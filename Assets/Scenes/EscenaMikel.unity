@@ -339,6 +339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paused: 0
+  percentaje: 1
 --- !u!1 &1030546755
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,6 +432,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1040216132}
   - component: {fileID: 1040216131}
+  - component: {fileID: 1040216130}
   m_Layer: 0
   m_Name: Barquito_1
   m_TagString: Untagged
@@ -438,6 +440,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &1040216130
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040216129}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ecfe6abf050fbb2488d584ac2e935f7f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &1040216131
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -478,7 +499,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d31f78e5f1f80c343a9994bd58d076ae, type: 3}
+  m_Sprite: {fileID: 209132752303892459, guid: d31f78e5f1f80c343a9994bd58d076ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
