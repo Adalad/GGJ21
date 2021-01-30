@@ -28,7 +28,7 @@ public class BoatGravity : MonoBehaviour
     private Transform AnchoredPlanetTransform;
     private Transform LastPlanetTransform;
 
-    void Start()
+    private void Start()
     {
         RigidBodyComponent = GetComponent<Rigidbody2D>();
         SpriteComponent = GetComponent<SpriteRenderer>();
@@ -40,6 +40,14 @@ public class BoatGravity : MonoBehaviour
         }
 
         StartCoroutine(Gravitate());
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            LiftUp();
+        }
     }
 
     private void LiftUp()
