@@ -20,8 +20,8 @@ public class CameraFollow : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        transform.position = new Vector3(Target.transform.position.x,Target.transform.position.y, transform.position.z);
-    }
+    //void Update()
+    //{
+    //    transform.position = Vector3.SmoothDamp(Target.transform.position.x,Target.transform.position.y, transform.position.z);
+    //}
 }
