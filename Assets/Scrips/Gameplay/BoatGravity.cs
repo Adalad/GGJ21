@@ -1,7 +1,8 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Rigidbody2D), typeof(BoatGravity))]
 public class BoatGravity : MonoBehaviour
 {
     [Header("Gravity")]
@@ -18,6 +19,15 @@ public class BoatGravity : MonoBehaviour
     [Range(0.0f, 100)]
     public float AnchorDistance = 5.0f;
 
+    public bool IsAnchored
+    {
+        get
+        {
+            return (AnchoredPlanetTransform != null);
+        }
+    }
+
+    private BoatCatCollector CollectorComponent;
     private Rigidbody2D RigidBodyComponent;
     private SpriteRenderer SpriteComponent;
     private Vector2 LookDirection;
@@ -30,6 +40,7 @@ public class BoatGravity : MonoBehaviour
 
     private void Start()
     {
+        CollectorComponent = GetComponent<BoatCatCollector>();
         RigidBodyComponent = GetComponent<Rigidbody2D>();
         SpriteComponent = GetComponent<SpriteRenderer>();
         GameObject[] planetGOs = GameObject.FindGameObjectsWithTag("Planet");
@@ -46,6 +57,11 @@ public class BoatGravity : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                return;
+            }
+
             LiftUp();
         }
     }
@@ -71,10 +87,10 @@ public class BoatGravity : MonoBehaviour
         {
             for (int i = 0; i < PlanetTransforms.Length; ++i)
             {
+                // Distance to the planet
+                float dist = Vector3.Distance(PlanetTransforms[i].position, transform.position);
                 if (PlanetTransforms[i] != LastPlanetTransform)
                 {
-                    // Distance to the planet
-                    float dist = Vector3.Distance(PlanetTransforms[i].position, transform.position);
 
                     if (dist < MaxGravityDistance)
                     {
@@ -93,6 +109,7 @@ public class BoatGravity : MonoBehaviour
                         if (dist <= AnchorDistance)
                         {
                             AnchoredPlanetTransform = PlanetTransforms[i];
+                            CollectorComponent.Anchored = true;
                             if (AnchoredPlanetTransform.GetComponent<PlanetRotation>().RotationSpeed > 0)
                             {
                                 SpriteComponent.flipX = true;
@@ -109,9 +126,33 @@ public class BoatGravity : MonoBehaviour
                         }
                     }
                 }
+                else
+                {
+                    if (dist > MaxGravityDistance)
+                    {
+                        LastPlanetTransform = null;
+                        CollectorComponent.Anchored = false;
+                    }
+                }
             }
 
             yield return null;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Finish"))
+        {
+            RigidBodyComponent.velocity = -RigidBodyComponent.velocity;
+            if (SpriteComponent.flipX)
+            {
+                SpriteComponent.flipX = false;
+            }
+            else
+            {
+                SpriteComponent.flipX = true;
+            }
         }
     }
 }
