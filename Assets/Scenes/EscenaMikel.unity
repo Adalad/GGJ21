@@ -331,7 +331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa230c6d660344fac52c8141604491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: -150
+  RotationSpeed: -119
 --- !u!212 &76719726
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -427,7 +427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa230c6d660344fac52c8141604491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: -150
+  RotationSpeed: -97
 --- !u!212 &88117063
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -523,7 +523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa230c6d660344fac52c8141604491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: -150
+  RotationSpeed: 142
 --- !u!212 &92929851
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1238,7 +1238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa230c6d660344fac52c8141604491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: -150
+  RotationSpeed: 90
 --- !u!212 &161775050
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1334,7 +1334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa230c6d660344fac52c8141604491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: -150
+  RotationSpeed: 90
 --- !u!212 &163610585
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1495,7 +1495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa230c6d660344fac52c8141604491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: -150
+  RotationSpeed: 111
 --- !u!212 &251725738
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1755,7 +1755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa230c6d660344fac52c8141604491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: -150
+  RotationSpeed: -129
 --- !u!212 &304594966
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1899,7 +1899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa230c6d660344fac52c8141604491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: -150
+  RotationSpeed: -129
 --- !u!212 &313887983
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2777,7 +2777,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa230c6d660344fac52c8141604491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: -150
+  RotationSpeed: -46
 --- !u!212 &626226797
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2873,7 +2873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa230c6d660344fac52c8141604491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: -150
+  RotationSpeed: 89
 --- !u!212 &635583739
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3583,7 +3583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa230c6d660344fac52c8141604491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: -150
+  RotationSpeed: 69
 --- !u!212 &864515650
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3793,7 +3793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa230c6d660344fac52c8141604491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: -150
+  RotationSpeed: 111
 --- !u!212 &931564402
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3889,7 +3889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa230c6d660344fac52c8141604491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: -150
+  RotationSpeed: 132
 --- !u!212 &951995582
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3985,7 +3985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa230c6d660344fac52c8141604491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: -150
+  RotationSpeed: -98
 --- !u!212 &958082455
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4244,7 +4244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa230c6d660344fac52c8141604491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: -150
+  RotationSpeed: -45
 --- !u!1 &1067188478
 GameObject:
   m_ObjectHideFlags: 0
@@ -4426,7 +4426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa230c6d660344fac52c8141604491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: -150
+  RotationSpeed: 152
 --- !u!212 &1103638745
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4634,7 +4634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa230c6d660344fac52c8141604491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: -150
+  RotationSpeed: -140
 --- !u!212 &1141794006
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4730,7 +4730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa230c6d660344fac52c8141604491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: -150
+  RotationSpeed: 79
 --- !u!212 &1145275990
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5466,7 +5466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa230c6d660344fac52c8141604491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: -150
+  RotationSpeed: -87
 --- !u!212 &1176443042
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6114,7 +6114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa230c6d660344fac52c8141604491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: -150
+  RotationSpeed: 142
 --- !u!212 &1495124820
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6210,7 +6210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa230c6d660344fac52c8141604491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: -150
+  RotationSpeed: 111
 --- !u!212 &1513205961
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6418,7 +6418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa230c6d660344fac52c8141604491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: -150
+  RotationSpeed: 59
 --- !u!212 &1584105059
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6833,7 +6833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa230c6d660344fac52c8141604491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: -150
+  RotationSpeed: 59
 --- !u!212 &1623976591
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6915,7 +6915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa230c6d660344fac52c8141604491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: -150
+  RotationSpeed: 50
 --- !u!212 &1638257202
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7118,7 +7118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa230c6d660344fac52c8141604491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: -150
+  RotationSpeed: 48
 --- !u!212 &1681871090
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7214,7 +7214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa230c6d660344fac52c8141604491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: -150
+  RotationSpeed: 122
 --- !u!212 &1712667440
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7340,7 +7340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa230c6d660344fac52c8141604491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: -150
+  RotationSpeed: -55
 --- !u!212 &1742469216
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8020,7 +8020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa230c6d660344fac52c8141604491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: -150
+  RotationSpeed: 121
 --- !u!212 &1853297493
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8116,7 +8116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa230c6d660344fac52c8141604491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: -150
+  RotationSpeed: 100
 --- !u!212 &1898412924
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8212,7 +8212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa230c6d660344fac52c8141604491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: -150
+  RotationSpeed: 143
 --- !u!212 &1910996190
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8338,7 +8338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa230c6d660344fac52c8141604491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: -150
+  RotationSpeed: -140
 --- !u!212 &1951046783
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8434,7 +8434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aa230c6d660344fac52c8141604491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: -150
+  RotationSpeed: -98
 --- !u!212 &1960920197
 SpriteRenderer:
   m_ObjectHideFlags: 0
