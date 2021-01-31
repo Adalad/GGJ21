@@ -2,21 +2,31 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-[RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(AudioSource))]
 public class BoatCatCollector : MonoBehaviour
 {
     [Range(0f, 100f)]
     public float ShuffleSpeed = 1f;
     public bool Anchored;
+    public AudioClip CatClip;
 
-    private SpriteRenderer SpriteRendererComponent;
+    public bool IsCarrying
+    {
+        get
+        {
+            return CatGrabbed;
+        }
+    }
+
+    private AudioSource AudioSourceComponent;
+    public SpriteRenderer SpriteRendererComponent;
     private bool CatGrabbed;
     private CatFollow FollowingCat;
     private Coroutine ShuffleRoutine;
 
     private void Start()
     {
-        SpriteRendererComponent = GetComponent<SpriteRenderer>();
+        AudioSourceComponent = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -39,11 +49,17 @@ public class BoatCatCollector : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Cat") && !CatGrabbed)
         {
-            CatGrabbed = true;
             FollowingCat = collision.GetComponent<CatFollow>();
             if (FollowingCat.GetGrabbed(gameObject.transform))
             {
+                CatGrabbed = true;
                 ShuffleRoutine = StartCoroutine(ColorShuffling());
+                AudioSourceComponent.clip = CatClip;
+                AudioSourceComponent.Play();
+            }
+            else
+            {
+                FollowingCat = null;
             }
         }
     }

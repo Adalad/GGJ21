@@ -18,6 +18,16 @@ public class BoatGravity : MonoBehaviour
     // Anchor distance
     [Range(0.0f, 100)]
     public float AnchorDistance = 5.0f;
+    public AudioClip PlanetClip;
+    public Camera Camera;
+    [Range(0.0f, 100)]
+    public float ZoomOutSpeed = 5.0f;
+    [Range(0.0f, 100)]
+    public float ZoomOutSize = 7.5f;
+    [Range(0.0f, 100)]
+    public float ZoomInSpeed = 5.0f;
+    [Range(0.0f, 100)]
+    public float ZoomInSize = 4.0f;
 
     public bool IsAnchored
     {
@@ -27,11 +37,13 @@ public class BoatGravity : MonoBehaviour
         }
     }
 
+    private AudioSource AudioSourceComponent;
     private BoatCatCollector CollectorComponent;
     private Rigidbody2D RigidBodyComponent;
-    private SpriteRenderer SpriteComponent;
     private Vector2 LookDirection;
     private float LookAngle;
+    private Vector3 OriginalScale;
+    private bool GravityExtra;
 
     // Planets
     private Transform[] PlanetTransforms;
@@ -40,9 +52,10 @@ public class BoatGravity : MonoBehaviour
 
     private void Start()
     {
+        OriginalScale = transform.GetChild(0).localScale;
+        AudioSourceComponent = GetComponent<AudioSource>();
         CollectorComponent = GetComponent<BoatCatCollector>();
         RigidBodyComponent = GetComponent<Rigidbody2D>();
-        SpriteComponent = GetComponent<SpriteRenderer>();
         GameObject[] planetGOs = GameObject.FindGameObjectsWithTag("Planet");
         PlanetTransforms = new Transform[planetGOs.Length];
         for (int i = 0; i < planetGOs.Length; ++i)
@@ -62,7 +75,21 @@ public class BoatGravity : MonoBehaviour
                 return;
             }
 
+
+            if ((AnchoredPlanetTransform == null) && (!CollectorComponent.IsCarrying))
+            {
+                GravityExtra = true;
+            }
+            
             LiftUp();
+        }
+
+        if (Input.GetButtonUp("Fire1"))
+        {
+            if ((AnchoredPlanetTransform == null) && (!CollectorComponent.IsCarrying))
+            {
+                GravityExtra = false;
+            }
         }
     }
 
@@ -76,7 +103,10 @@ public class BoatGravity : MonoBehaviour
             RigidBodyComponent.isKinematic = false;
             transform.parent = null;
             RigidBodyComponent.AddForce(transform.right.normalized * LiftForce * direction);
+            AudioSourceComponent.clip = PlanetClip;
+            AudioSourceComponent.Play();
 
+            StartCoroutine(ZoomOut());
             StartCoroutine(Gravitate());
         }
     }
@@ -96,7 +126,14 @@ public class BoatGravity : MonoBehaviour
                     {
                         // Gravity
                         Vector3 v = PlanetTransforms[i].position - transform.position;
-                        RigidBodyComponent.AddForce(v.normalized * (1.0f - dist / MaxGravityDistance) * MaxGravity);
+                        if (GravityExtra)
+                        {
+                            RigidBodyComponent.AddForce(v.normalized * (1.0f - dist / MaxGravityDistance) * MaxGravity * 2);
+                        }
+                        else
+                        {
+                            RigidBodyComponent.AddForce(v.normalized * (1.0f - dist / MaxGravityDistance) * MaxGravity);
+                        }
 
                         // Rotating to the planet
                         LookDirection = PlanetTransforms[i].position - transform.position;
@@ -108,20 +145,22 @@ public class BoatGravity : MonoBehaviour
 
                         if (dist <= AnchorDistance)
                         {
+                            GravityExtra = false;
                             AnchoredPlanetTransform = PlanetTransforms[i];
                             CollectorComponent.Anchored = true;
                             if (AnchoredPlanetTransform.GetComponent<PlanetRotation>().RotationSpeed > 0)
                             {
-                                SpriteComponent.flipX = true;
+                                transform.GetChild(0).localScale = new Vector3(-OriginalScale.x, OriginalScale.y, 1);
                             }
                             else
                             {
-                                SpriteComponent.flipX = false;
+                                transform.GetChild(0).localScale = new Vector3(OriginalScale.x, OriginalScale.y, 1);
                             }
 
                             RigidBodyComponent.isKinematic = true;
                             RigidBodyComponent.velocity = Vector2.zero;
                             transform.parent = AnchoredPlanetTransform;
+                            StartCoroutine(ZoomIn());
                             break;
                         }
                     }
@@ -145,14 +184,24 @@ public class BoatGravity : MonoBehaviour
         if (collision.gameObject.CompareTag("Finish"))
         {
             RigidBodyComponent.velocity = -RigidBodyComponent.velocity;
-            if (SpriteComponent.flipX)
-            {
-                SpriteComponent.flipX = false;
-            }
-            else
-            {
-                SpriteComponent.flipX = true;
-            }
+        }
+    }
+
+    private IEnumerator ZoomOut()
+    {
+        while (Camera.orthographicSize < ZoomOutSize)
+        {
+            Camera.orthographicSize += ZoomOutSpeed * Time.deltaTime;
+            yield return null;
+        }
+    }
+
+    private IEnumerator ZoomIn()
+    {
+        while (Camera.orthographicSize > ZoomInSize)
+        {
+            Camera.orthographicSize -= ZoomInSpeed * Time.deltaTime;
+            yield return null;
         }
     }
 }
