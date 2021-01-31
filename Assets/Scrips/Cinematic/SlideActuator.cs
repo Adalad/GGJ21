@@ -1,31 +1,32 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+using UnityEngine.Video;
 
-[RequireComponent(typeof(Image))]
 public class SlideActuator : MonoBehaviour
 {
-    public Sprite[] SlideSprites;
-
-    private Image ImageComponent;
-    private int CurrentSprite;
+    public VideoPlayer VideoPlayerGO;
+    private long playerCurrentFrame;
+    private long playerFrameCount;
 
     private void Start()
     {
-        ImageComponent = GetComponent<Image>();
-        ImageComponent.sprite = SlideSprites[CurrentSprite];
+        VideoPlayerGO.Play();
+        playerCurrentFrame = VideoPlayerGO.GetComponent<VideoPlayer>().frame;
+        playerFrameCount = Convert.ToInt64(VideoPlayerGO.GetComponent<VideoPlayer>().frameCount) - 5;
     }
 
     private void Update()
     {
+        playerCurrentFrame = VideoPlayerGO.GetComponent<VideoPlayer>().frame;
+        if (playerCurrentFrame >= playerFrameCount)
+        {
+            SceneManager.LoadScene("GameScene");
+        }
+
         if (Input.GetButtonDown("Fire1"))
         {
-            if (++CurrentSprite >= SlideSprites.Length)
-            {
-                SceneManager.LoadScene("GameScene");
-            }
-
-            ImageComponent.sprite = SlideSprites[CurrentSprite];
+            SceneManager.LoadScene("GameScene");
         }
     }
 }
