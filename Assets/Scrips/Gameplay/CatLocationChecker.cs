@@ -3,9 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class CatLocationchecker
 {
+    public static int CatsPlaced = 0;
     private static float AnchorDistance = 5;
     private static GameObject[] CatLocations;
-    private static int CatsPlaced = 0;
 
     public static bool CheckLocation(Vector3 position)
     {
@@ -16,8 +16,9 @@ public class CatLocationchecker
 
         for (int i = 0; i < CatLocations.Length; ++i)
         {
-            if (Vector3.Distance(position, CatLocations[i].transform.position) < AnchorDistance)
+            if (CatLocations[i].activeSelf && (Vector3.Distance(position, CatLocations[i].transform.position) < AnchorDistance))
             {
+                CatLocations[i].SetActive(false);
                 CatsPlaced++;
                 if (CatsPlaced == 15)
                 {

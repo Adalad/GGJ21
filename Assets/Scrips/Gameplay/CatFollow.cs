@@ -42,7 +42,7 @@ public class CatFollow : MonoBehaviour
         }
         else
         {
-            ColliderComponent.enabled = false;
+            ColliderComponent.enabled = true;
         }
     }
 

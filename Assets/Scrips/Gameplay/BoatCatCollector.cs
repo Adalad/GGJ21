@@ -37,7 +37,7 @@ public class BoatCatCollector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Cat"))
+        if (collision.gameObject.CompareTag("Cat") && !CatGrabbed)
         {
             CatGrabbed = true;
             FollowingCat = collision.GetComponent<CatFollow>();
