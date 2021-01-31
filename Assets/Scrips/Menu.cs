@@ -29,7 +29,10 @@ public class Menu : MonoBehaviour
 
     private void Update()
     {
-        Vector3 pos = BoatGO.position * 10;
-        BoatUI.anchoredPosition = pos;
+        if (BoatGO != null)
+        {
+            Vector3 pos = BoatGO.position * 10;
+            BoatUI.anchoredPosition = pos;
+        }
     }
 }
